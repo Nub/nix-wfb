@@ -53,11 +53,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1715542476,
-        "narHash": "sha256-FF593AtlzQqa8JpzrXyRws4CeKbc5W86o8tHt4nRfIg=",
+        "lastModified": 1716633019,
+        "narHash": "sha256-xim1b5/HZYbWaZKyI7cn9TJCM6ewNVZnesRr00mXeS4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "44072e24566c5bcc0b7aa9178a0104f4cfffab19",
+        "rev": "9d29cd266cebf80234c98dd0b87256b6be0af44e",
         "type": "github"
       },
       "original": {
@@ -96,11 +96,11 @@
         "u-boot-src": "u-boot-src"
       },
       "locked": {
-        "lastModified": 1715724643,
-        "narHash": "sha256-iy0bnQUm19rTY3LQLDilhJ1xyddtZk4gNHFtnxYQTvk=",
+        "lastModified": 1716298142,
+        "narHash": "sha256-UEMIk330LiFh05AfGaX7u5nBGD5uSs/ldWZe4948OaE=",
         "owner": "tstat",
         "repo": "raspberry-pi-nix",
-        "rev": "cf9500ba4cd917dd225328dc8fa9b126ddc2c95e",
+        "rev": "26d6ba2a91e6384252bfea5e94c3364e7f8879f2",
         "type": "github"
       },
       "original": {
@@ -272,11 +272,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1717095044,
-        "narHash": "sha256-2ws5nraEfSQcu6FXlpeoyy94xbXNNGHSicKc46u4dSQ=",
+        "lastModified": 1717098763,
+        "narHash": "sha256-ZdvD6qAx8bp3Y87O6RIDKbNtTwuqd5TKPYv627B0y0M=",
         "owner": "Nub",
         "repo": "wfb-ng",
-        "rev": "237817a6f8a3ee7b512d8a65bee555768c0b0ef0",
+        "rev": "65b821bfd8db827bd7c8f3fc33e9875ea0c52009",
         "type": "github"
       },
       "original": {

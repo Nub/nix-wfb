@@ -1,7 +1,5 @@
 { pkgs, inputs, system, ... }:
 {
-
-
   networking.hostName = "wfb";
   networking.wireless.enable = true;
   networking.wireless.userControlled.enable = true;
