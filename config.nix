@@ -6,26 +6,25 @@ in{
 
   networking.hostName = "wfb-pi";
   networking.wireless.enable = true;
-  # networking.userControlled.enable = true;
+  networking.userControlled.enable = true;
   networking.wireless.networks.BigHertz.psk = "somethingbig";
   networking.wireless.networks.LilHertz.psk = "somethinglil";
 
-  # networking.useDHCP = false;
-  # networking.interfaces.enp0s1.useDHCP = true;
-  # networking.interfaces.enp0s2.useDHCP = true;
+  networking.useDHCP = false;
+  networking.interfaces.wlan0.useDHCP = true;
 
-  users.users.merops = {
+  users.users.wfb-pi = {
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIngpCTE3a8QDHarFnqa9O08MbmOlPNzptmfQ233yGzn zachthayer@F915Q2RDFY"
     ];
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    password = "merops";
+    password = "wfb-pi";
     shell = pkgs.fish;
   };
 
   environment.variables = {
-    NIX_CFG = nixos_cfg;
+    EDITOR = "nvim";
   };
 
   environment.shellAliases = {
@@ -33,7 +32,8 @@ in{
     ctl = "sudo systemctl";
     wfb_drone = "cd ~/wfb; wfb-server udp_drone wfb0";
     wfb_gs = "cd ~/wfb; wfb-server udp_gs wfb0";
-    install_nixos_cfg = "cp -r '$NIX_CFG' ~/nixos_cfg";
+    install_nixos_cfg = "cp -r ${nixos_cfg} ~/nixos_cfg";
+    rbs = "sudo nixos-rebuild switch --flake";
   };
 
   environment.systemPackages = with pkgs; [
@@ -61,15 +61,19 @@ in{
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc openssl libudev0-shim ];
 
+  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" "repl-flake" ];
-  nix.settings.trusted-users = ["merops" "root"];
+  nix.settings.trusted-users = [ "merops" "@wheel" ];
   nix.settings = {
-    extra-substituters = [ "https://raspberry-pi-nix.cachix.org" ];
-    extra-trusted-public-keys = [
+    substituters = [ 
+      "https://raspberry-pi-nix.cachix.org"
+      "https://wfb-pi.cachix.org"
+    ];
+    trusted-public-keys = [
       "raspberry-pi-nix.cachix.org-1:WmV2rdSangxW0rZjY/tBvBDSaNFQ3DyEQsVw8EvHn9o="
+      "wfb-pi.cachix.org-1:T41vAtTN5vC3hG5wZzVx2+x5Fdk1gjsPAxsJ0uTZK1M="
     ];
   };
-  nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "23.11";
 }
