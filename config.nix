@@ -6,7 +6,7 @@ in{
 
   networking.hostName = "wfb-pi";
   networking.wireless.enable = true;
-  networking.userControlled.enable = true;
+  networking.wireless.userControlled.enable = true;
   networking.wireless.networks.BigHertz.psk = "somethingbig";
   networking.wireless.networks.LilHertz.psk = "somethinglil";
 
