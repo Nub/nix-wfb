@@ -1,5 +1,7 @@
 { pkgs, inputs, system, ... }:
 {
+
+
   networking.hostName = "wfb";
   networking.wireless.enable = true;
   networking.wireless.userControlled.enable = true;
@@ -46,6 +48,7 @@
     fishPlugins.bass
   ];
 
+  services.wfb.enable = true;
   services.openssh.enable = true;
   services.openssh.ports = [ 22 2222 ];
   services.tailscale.enable = true;
