@@ -29,6 +29,10 @@
       # };
       all = {
         options = {
+          usb_max_current_enable = {
+            enable = true;
+            value = 1;
+          };
           # The firmware will start our u-boot binary rather than a
           # linux kernel.
           kernel = {
