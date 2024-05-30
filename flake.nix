@@ -1,9 +1,13 @@
 {
-  description = "raspberry-pi-nix example";
+  description = "nix-wfb nixos configurations for wfb-ng system";
   nixConfig = {
-    extra-substituters = [ "https://raspberry-pi-nix.cachix.org" ];
+    extra-substituters = [ 
+      "https://raspberry-pi-nix.cachix.org"
+      "https://wfb-pi.cachix.org"
+    ];
     extra-trusted-public-keys = [
       "raspberry-pi-nix.cachix.org-1:WmV2rdSangxW0rZjY/tBvBDSaNFQ3DyEQsVw8EvHn9o="
+      "wfb-pi.cachix.org-1:T41vAtTN5vC3hG5wZzVx2+x5Fdk1gjsPAxsJ0uTZK1M="
     ];
   };
   inputs = {
