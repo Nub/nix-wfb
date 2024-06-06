@@ -1,5 +1,16 @@
 { pkgs, inputs, system, ... }:
 {
+#  fileSystems."/" =
+#    { device = "/dev/disk/by-label/NIXOS_SD";
+#      fsType = "ext4";
+#    };
+#
+#  fileSystems."/boot/firmware" =
+#    { device = "/dev/disk/by-label/FIRMWARE";
+#      fsType = "vfat";
+#      options = [ "fmask=0022" "dmask=0022" ];
+#    };
+
   networking.hostName = "wfb";
   networking.wireless.enable = true;
   networking.wireless.userControlled.enable = true;

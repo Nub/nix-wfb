@@ -23,7 +23,7 @@
     let inherit (nixpkgs.lib) nixosSystem;
     in 
     utils.lib.eachDefaultSystem (system: {
-        wfb = nixosSystem {
+        packages.nixosConfigurations.wfb = nixosSystem {
           inherit system;
           modules = [ 
               inputs.wfb-ng.nixosModules.${system}.wfb
