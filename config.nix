@@ -22,6 +22,7 @@
   # TODO: make these into module options
   networking.useDHCP = false;
   networking.interfaces.wlan0.useDHCP = true;
+  networking.interfaces.end0.useDHCP = true;
 
   users.users.wfb = {
     isNormalUser = true;
